@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:15-alpine 
+    container_name: postgres_container
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=learning_db
+    ports:
+      - "5432:5432" 
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data 
